@@ -1,0 +1,21 @@
+Step 1: Create a Database DAVDB on MySql Database and also we create Category and Publication tables on this database.
+
+Category Table
+
+CREATE TABLE `category` (
+  `categoryId` int(11) NOT NULL AUTO_INCREMENT,
+  `categoryName` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`categoryId`)
+)
+
+Publication Table
+
+CREATE TABLE `publication` (
+  `pubId` int(11) NOT NULL AUTO_INCREMENT,
+  `content` varchar(255) DEFAULT NULL,
+  `Title` varchar(255) DEFAULT NULL,
+  `categoryId` int(11) DEFAULT NULL,
+  PRIMARY KEY (`pubId`),
+  KEY `FK23254A0CAF274936` (`categoryId`),
+  CONSTRAINT `FK23254A0CAF274936` FOREIGN KEY (`categoryId`) REFERENCES `category` (`categoryId`)
+)
